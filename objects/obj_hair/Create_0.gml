@@ -182,10 +182,12 @@ Draw = function(_sprite = undefined) {
 		
 		switch(draw_type) {
 			case draw_types.TEX:
-			
+				
 				//	First we check to see if an argument has been provided for the Draw function
 				//	If it hasn't, we'll be drawing non-textured primitives
 				if (_sprite == undefined) {
+					
+					draw_set_color($202747);
 					
 					draw_primitive_begin(pr_trianglestrip);
 					
@@ -253,6 +255,8 @@ Draw = function(_sprite = undefined) {
 				}
 				else {
 					
+					draw_set_color(c_white);
+					
 					//	As above, so below, but this time pulling the texture data from the supplied sprite and using that to draw
 					var _tex = sprite_get_texture(_sprite,0);
 					draw_primitive_begin_texture(pr_trianglestrip,_tex);
@@ -304,7 +308,9 @@ Draw = function(_sprite = undefined) {
 				//	The circle mode is much simpler, we just run the DrawPoint() method from the Point constructor
 				//	which simply draws a circle at the x and y position for each point, with the radius that the point
 				//	was given. Creates a hair effect very similar to Celeste.
+				
 				draw_set_color($202747);
+				
 				for (var i=0;i<_points_len;i++) {
 					strands[k][i].DrawPoint();
 				}
