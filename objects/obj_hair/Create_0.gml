@@ -136,7 +136,7 @@ Update = function() {
 			//	UpdatePos() which sets the x and y position for that point. Have a look at the method inside the constructor
 			//	at the top of this event for a more full description of it
 			if (i == 0) {
-				//	The initial point is set to the mouse positiono
+				//	The initial point is set to the mouse position, change this to whatever position you want the hair to follow (an instance's position, for example)
 				points[i].UpdatePos(mouse_x,mouse_y,true);
 			}
 			else {
